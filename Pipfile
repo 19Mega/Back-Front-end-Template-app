@@ -1,0 +1,38 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+mysql-connector-python = "*"
+mysqlclient = "*"
+flask = "*"
+sqlalchemy = "==1.4.46"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+flask-swagger = "*"
+psycopg2-binary = "*"
+python-dotenv = "*"
+flask-cors = "*"
+gunicorn = "*"
+cloudinary = "*"
+flask-admin = "*"
+typing-extensions = "*"
+flask-bcrypt = "*"
+flask-jwt-extended = "*"
+
+[requires]
+python_version = "3.11"
+
+[scripts]
+start="flask run -p 3001 -h 0.0.0.0"
+init="flask db init"
+migrate="flask db migrate"
+local="heroku local"
+upgrade="flask db upgrade"
+downgrade="flask db downgrade"
+insert-test-data="flask insert-test-data"
+reset_db="@powershell -noninteractive -nologo -noprofile -executionpolicy bypass './docs/assets/reset_migrations.ps1'"
+deploy="echo 'Please follow this 3 steps to deploy: https://github.com/4GeeksAcademy/flask-rest-hello/blob/master/README.md#deploy-your-website-to-heroku' "
